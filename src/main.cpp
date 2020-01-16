@@ -118,8 +118,8 @@ void setup(void)
   u8x8.drawString(1, 1, "SCHOOL SCIENCE");
   u8x8.drawString(0, 2, "OLYMPIAD 2019-20");
   u8x8.setFont(u8x8_font_saikyosansbold8_u);
-  u8x8.drawString(1, 4, "DIGITAL EC AND");
-  u8x8.drawString(2, 5, "CALIBRATION");
+  u8x8.drawString(3, 4, "DIGITAL EC");
+  u8x8.drawString(3, 5, "CALIBRATOR");
   delay(5000);
   u8x8.clear();
 
@@ -134,6 +134,11 @@ void setup(void)
     u8x8.clear();
     delay(200);
   }
+
+  u8x8.setFont(u8x8_font_open_iconic_arrow_4x4);
+  u8x8.drawGlyph(6, 1, '@' + 22);
+  u8x8.setFont(u8x8_font_saikyosansbold8_u);
+  u8x8.drawString(2, 6, "PLEASE WAIT.");
 }
 // ************************************************** END Setup ********************************************************************************* //
 
@@ -189,6 +194,7 @@ void GetK()
 // ************************************************** BEGIN Print Function ********************************************************************** //
 void PrintReadings()
 {
+  u8x8.clear();
   u8x8.setFont(u8x8_font_8x13B_1x2_r);
   u8x8.drawString(0, 0, "EC:");
   dtostrf(CalibrationEC, 3, 2, charBuff);
